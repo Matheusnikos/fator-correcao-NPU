@@ -9,3 +9,7 @@ main() {
 
   print(resultado);
 }
+
+myFunction() {
+  print('Creating a test pull request');
+}
