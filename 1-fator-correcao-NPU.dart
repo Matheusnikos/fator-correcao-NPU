@@ -30,3 +30,7 @@ pegarProteina() {
     return num.parse(proteinaString);
   }
 }
+
+myFunction() {
+  print('Creating a test pull request');
+}
