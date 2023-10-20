@@ -1,11 +1,32 @@
+import 'dart:io';
+
 main() {
-  num proteina = 15;
+  pegarOrigem();
+}
 
-  double animal = 0.7;
-  // double leguminosa = 0.6;
-  // double cereal = 0.5;
+pegarOrigem() {
+  print('Insira a origem da proteína - (== animal, vegetal ou cereal ==)');
+  String? origemString = stdin.readLineSync();
+  if (origemString == 'animal') {
+    num resultadoAnimal = pegarProteina() * 0.7;
+    print('Total de $resultadoAnimal' 'g');
+  } else if (origemString == 'leguminosa') {
+    num resultadoVegetal = pegarProteina() * 0.6;
+    print('Total de $resultadoVegetal' 'g');
+  } else if (origemString == 'cereal') {
+    num resultadoCereal = pegarProteina() * 0.5;
+    print('Total de $resultadoCereal' 'g');
+  } else {
+    print('== Valor errado, tente novamente! ==');
+  }
+}
 
-  var resultado = proteina * animal;
-
-  print(resultado);
+pegarProteina() {
+  print('Insira a quantidade de proteína diária');
+  String? proteinaString = stdin.readLineSync();
+  if (proteinaString == null) {
+    return 0.0;
+  } else {
+    return num.parse(proteinaString);
+  }
 }
